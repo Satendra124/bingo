@@ -26,39 +26,39 @@
                         <td class="tg-0pky player-move"></td>
                     </tr>
                     <tr>
-                        <td class="tg-lboi">1</td>
-                        <td class="tg-0pky">2</td>
-                        <td class="tg-0pky">3</td>
-                        <td class="tg-0pky">4</td>
-                        <td class="tg-0pky">5</td>
+                        <td class="tg-lboi num r1c1">1</td>
+                        <td class="tg-0pky num r1c2">2</td>
+                        <td class="tg-0pky num r1c3">3</td>
+                        <td class="tg-0pky num r1c4">4</td>
+                        <td class="tg-0pky num r1c5">5</td>
                     </tr>
                     <tr>
-                        <td class="tg-0pky">6</td>
-                        <td class="tg-0pky">7</td>
-                        <td class="tg-0pky">8</td>
-                        <td class="tg-0pky">9</td>
-                        <td class="tg-0pky">10</td>
+                        <td class="tg-0pky num r2c1">6</td>
+                        <td class="tg-0pky num r2c2">7</td>
+                        <td class="tg-0pky num r2c3">8</td>
+                        <td class="tg-0pky num r2c4">9</td>
+                        <td class="tg-0pky num r2c5">10</td>
                     </tr>
                     <tr>
-                        <td class="tg-0pky">11</td>
-                        <td class="tg-0pky">12</td>
-                        <td class="tg-0pky">13</td>
-                        <td class="tg-0pky">14</td>
-                        <td class="tg-0pky">15</td>
+                        <td class="tg-0pky num r3c1">11</td>
+                        <td class="tg-0pky num r3c2">12</td>
+                        <td class="tg-0pky num r3c3">13</td>
+                        <td class="tg-0pky num r3c4">14</td>
+                        <td class="tg-0pky num r3c5">15</td>
                     </tr>
                     <tr>
-                        <td class="tg-0pky">16</td>
-                        <td class="tg-0pky">17</td>
-                        <td class="tg-0pky">18</td>
-                        <td class="tg-0pky">19</td>
-                        <td class="tg-0pky">20</td>
+                        <td class="tg-0pky num r4c1">16</td>
+                        <td class="tg-0pky num r4c2">17</td>
+                        <td class="tg-0pky num r4c3">18</td>
+                        <td class="tg-0pky num r4c4">19</td>
+                        <td class="tg-0pky num r4c5">20</td>
                     </tr>
                     <tr>
-                        <td class="tg-0pky">21</td>
-                        <td class="tg-0pky">22</td>
-                        <td class="tg-0pky">23</td>
-                        <td class="tg-0pky">24</td>
-                        <td class="tg-0pky">25</td>
+                        <td class="tg-0pky num r5c1">21</td>
+                        <td class="tg-0pky num r5c2">22</td>
+                        <td class="tg-0pky num r5c3">23</td>
+                        <td class="tg-0pky num r5c4">24</td>
+                        <td class="tg-0pky num r5c5">25</td>
                     </tr>
                 </tbody>
             </table>
@@ -69,6 +69,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="{% static 'js/scripts.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        var game_id = '{{ game_id }}'
+        console.log(game_id)
+        var board_str = '{{board | safe }}'
+        var is_my_move = '{{ is_my_move }}'
+    </script>
+    <script src="{% static 'js/live.js'%}"></script>
 </body>
 
 </html>

@@ -5,10 +5,28 @@
     align-items: center;
     text-align: center;
     min-height: 400px;
-    height: 50vh;
+    height: 400px;
     min-width: 600px;
-    width: 50vw;
-    background-color: chocolate
+    width: 600px;
+    border: none;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .main_wrapper {
@@ -22,28 +40,35 @@
 }
 
 .tg {
-    border-collapse: collapse;
+    border-collapse: separate;
     border-spacing: 0;
     margin: 0px auto;
     width: 100%;
     height: 100%;
     text-align: center;
+    border-radius: 10px;
+    display: table;
+    border-spacing: 10px;
 }
 
 .tg td {
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-    font-family: Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
     overflow: hidden;
     padding: 10px 13px;
     word-break: normal;
     text-align: center !important;
     vertical-align: center !important;
+    border-radius: 15px;
+    transition: 0.3s;
+    text-align: center;
 }
 
-.tg td:hover {
+.num {
+    background-color: white;
+}
+
+.num:hover {
     background-color: coral;
     cursor: cell;
 }
@@ -53,11 +78,11 @@
 }
 
 .player-move:hover {
-    background-color: green !important;
+    background-color: green;
 }
 
 .tg th {
-    border-color: black;
+    border-color: blueviolet;
     border-style: solid;
     border-width: 1px;
     font-family: Arial, sans-serif;
@@ -77,5 +102,54 @@
 .tg .tg-0pky {
     border-color: inherit;
     text-align: left;
-    vertical-align: top
+    vertical-align: middle
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+.submit_button {
+    position: relative;
+    display: inline-flex;
+    width: 100px;
+    height: 50px;
+    perspective: 1000px;
+    top: 20px;
+    left: 154px;
+}
+
+.submit_button a {
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.submit_button a:before,
+.submit_button a:after {
+    position: absolute;
+    content: "Submit";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid blueviolet;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.submit_button a:before {
+    color: #fff;
+    background: blueviolet;
+    transform: rotateY(0deg) translateZ(25px);
+}
+
+.submit_button a:after {
+    color: white;
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.submit_button a:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
 }

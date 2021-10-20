@@ -37,14 +37,26 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'channels',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'oauth_app',
     'bingo_game',
+    'background_task',
     
 ]
+ASGI_APPLICATION = "bingo.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("localhost", 6379)],
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,20 +86,27 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bingo.wsgi.application'
+#WSGI_APPLICATION = 'bingo.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'da8bkbh0i9n8tp',
+#         'USER' : 'hyyatqnwdjstlj',
+#         'PASSWORD' : '13887f9c3d0de9446d2cc9b6a4b78b6b98944d60076b737e12b39451931a192e',
+#         'HOST' : 'ec2-52-0-67-144.compute-1.amazonaws.com',
+#         'PORT' : '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'da8bkbh0i9n8tp',
-        'USER' : 'hyyatqnwdjstlj',
-        'PASSWORD' : '13887f9c3d0de9446d2cc9b6a4b78b6b98944d60076b737e12b39451931a192e',
-        'HOST' : 'ec2-52-0-67-144.compute-1.amazonaws.com',
-        'PORT' : '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
