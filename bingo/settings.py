@@ -92,23 +92,23 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'da8bkbh0i9n8tp',
-#         'USER' : 'hyyatqnwdjstlj',
-#         'PASSWORD' : '13887f9c3d0de9446d2cc9b6a4b78b6b98944d60076b737e12b39451931a192e',
-#         'HOST' : 'ec2-52-0-67-144.compute-1.amazonaws.com',
-#         'PORT' : '5432',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'db8o33ri2ojhm2',
+        'USER' : 'uwoeybgjsjonvf',
+        'PASSWORD' : '4a3983366f28dc78d2953cfe4d8eba3fddb55e77022b875f3feaf65b7dd59d68',
+        'HOST' : 'ec2-63-32-248-14.eu-west-1.compute.amazonaws.com',
+        'PORT' : '5432',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
